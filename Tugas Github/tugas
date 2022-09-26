@@ -1,0 +1,30 @@
+
+def hitungGaji(gaji, lamaKerja):
+    gajiLembur = 1.5 * gaji
+    jamKerja = 40
+    total = 0
+    if (lamaKerja > jamKerja):
+        total = (gaji*jamKerja) + (gajiLembur*(lamaKerja-jamKerja))
+        print("total gaji seminggu: %d" %total)
+        return total
+    else:
+        total = (gaji*jamKerja)
+        print("total gaji seminggu: %d" %total)
+        return total
+
+while(True):
+    gaji = int(input("Masukkan gaji anda: "))
+    lamaKerja = int(input("Masukkan jam kerja anda dalam seminggu (termasuk lembur): "))
+    total = hitungGaji(gaji, lamaKerja)
+    pengeluaran = int(input("Masukkan pengeluaran anda dalam seminggu: "))
+    sisaUang = (total-pengeluaran)
+    if sisaUang > 0:
+        print("Anda dapat menabung sebanyak: %d" %sisaUang)
+    elif sisaUang == 0:
+        print("Maaf, Anda tidak dapat menabung")
+    else:
+        print("Cari tambahan!")
+
+    loop = input("Apakah anda ingin menghitung kembali ? (y/n): ")
+    if loop == 'n':
+        break
